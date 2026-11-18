@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#13283a">
+  <meta name="description" content="Ghana One, a standalone interactive consumer-commerce experience design prototype.">
+  <title>Ghana One · Discover. Compare. Get it.</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to shopping content</a>
+  <div class="demo-banner"><strong>INTERACTIVE CONCEPT</strong><span>Everything shown is fictional. No real shops, stock, orders, payments or messages.</span><button type="button" data-action="about-demo" aria-label="Read about this demo">What is this?</button></div>
+  <header class="site-header">
+    <div class="header-primary">
+      <button class="brand" type="button" data-action="home" aria-label="Ghana One home">
+        <span class="brand-mark" aria-hidden="true">G</span><span class="brand-words">ghana<span>one</span><small>One place for everyday needs</small></span>
+      </button>
+      <button class="deliver-to" type="button" data-action="select-city"><span aria-hidden="true">⌖</span><span><small>Shopping around</small><b id="current-city">Accra</b></span><span aria-hidden="true">⌄</span></button>
+      <form id="search-form" class="search-wrap" role="search" autocomplete="off">
+        <label class="sr-only" for="search">Search products, shops and essentials</label>
+        <input id="search" name="search" type="search" placeholder="Search phones, groceries, fashion, home..." aria-label="Search products, shops and essentials">
+        <button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+      </form>
+      <div class="header-actions">
+        <button type="button" data-action="saved" class="header-button"><span aria-hidden="true">♡</span><small>Saved</small></button>
+        <button type="button" data-action="orders" class="header-button"><span aria-hidden="true">▤</span><small>Orders</small></button>
+        <button type="button" data-action="cart" class="header-button cart-header"><span aria-hidden="true">🛒</span><span id="cart-count" class="cart-count">0</span><small>Basket</small></button>
+        <button type="button" data-action="account" class="header-button account-header"><span aria-hidden="true">☻</span><small>Account</small></button>
+      </div>
+    </div>
+    <nav class="category-bar" aria-label="Shop categories">
+      <button type="button" data-action="category" data-category="All">☰ &nbsp;All categories</button>
+      <button type="button" data-action="category" data-category="Electronics">Electronics</button>
+      <button type="button" data-action="category" data-category="Groceries">Groceries</button>
+      <button type="button" data-action="category" data-category="Home">Home &amp; living</button>
+      <button type="button" data-action="category" data-category="Fashion">Fashion</button>
+      <button type="button" data-action="category" data-category="Beauty">Beauty &amp; care</button>
+      <button type="button" data-action="find">Find it for me <span class="new-dot">NEW</span></button>
+      <button type="button" data-action="business" class="business-link">Switch to business workspace ↗</button>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1" aria-live="off"><div class="loading-fallback">Loading the Ghana One concept…</div></main>
+  <nav class="mobile-nav" aria-label="Quick navigation">
+    <button type="button" data-action="home"><span aria-hidden="true">⌂</span>Explore</button>
+    <button type="button" data-action="find"><span aria-hidden="true">⌕</span>Find</button>
+    <button type="button" data-action="saved"><span aria-hidden="true">♡</span>Saved</button>
+    <button type="button" data-action="cart"><span aria-hidden="true">🛒</span>Basket <i id="mobile-cart-count">0</i></button>
+    <button type="button" data-action="account"><span aria-hidden="true">☻</span>Account</button>
+  </nav>
+  <footer class="site-footer"><div class="container"><div><strong>ghana<span>one</span></strong><p>Consumer-first Ghanaian commerce concept</p></div><p>Visual prototype only • Fictional merchants and transactions • No live backend</p><button type="button" data-action="reset">Reset sample data</button></div></footer>
+  <div id="overlay" class="overlay" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" data-action="close-modal" aria-label="Close dialog">×</button><div id="modal-body"></div></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
